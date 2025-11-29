@@ -1,0 +1,160 @@
+/*
+Theme Name: 22K Gold Rate
+Theme URI: https://example.com/22k-gold-rate
+Author: Antigravity
+Author URI: https://example.com
+Description: A premium, high-performance WordPress theme for commodity rates (Gold, Silver, Oil) with live charts and dark mode.
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: gold-rate
+Tags: two-columns, right-sidebar, custom-colors, custom-menu, featured-images, footer-widgets, full-width-template, theme-options
+*/
+
+:root {
+    /* Primary Colors */
+    --color-gold: #D4AF37;
+    --color-gold-light: #F4D03F;
+    --color-gold-dark: #AA8C2C;
+    --color-silver: #C0C0C0;
+    --color-oil: #333333;
+    
+    /* UI Colors */
+    --color-bg-light: #ffffff;
+    --color-bg-dark: #1a1a1a;
+    --color-text-light: #333333;
+    --color-text-dark: #f0f0f0;
+    --color-accent: #007bff;
+    
+    /* Typography */
+    --font-primary: 'Inter', sans-serif;
+    --font-heading: 'Playfair Display', serif;
+    
+    /* Spacing */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 2rem;
+    --spacing-lg: 4rem;
+    --container-width: 1200px;
+}
+
+[data-theme="dark"] {
+    --color-bg-light: #121212;
+    --color-text-light: #e0e0e0;
+    --color-oil: #f0f0f0;
+}
+
+/* Reset & Base */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-primary);
+    background-color: var(--color-bg-light);
+    color: var(--color-text-light);
+    line-height: 1.6;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    color: var(--color-gold-dark);
+    margin-bottom: var(--spacing-sm);
+}
+
+[data-theme="dark"] h1, 
+[data-theme="dark"] h2, 
+[data-theme="dark"] h3 {
+    color: var(--color-gold);
+}
+
+a {
+    color: var(--color-gold-dark);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+a:hover {
+    color: var(--color-gold);
+}
+
+.container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 var(--spacing-sm);
+}
+
+/* Header Styles */
+.site-header {
+    background: var(--color-bg-light);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    padding: var(--spacing-sm) 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+[data-theme="dark"] .site-header {
+    background: #1e1e1e;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+.header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.site-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-gold-dark);
+}
+
+.main-navigation ul {
+    display: flex;
+    list-style: none;
+    gap: var(--spacing-md);
+}
+
+.theme-toggle {
+    background: none;
+    border: 1px solid var(--color-gold);
+    color: var(--color-text-light);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+/* Footer Styles */
+.site-footer {
+    background: #111;
+    color: #fff;
+    padding: var(--spacing-lg) 0;
+    margin-top: var(--spacing-lg);
+}
+
+.footer-inner {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-md);
+}
+
+/* Utilities */
+.btn {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    background: var(--color-gold);
+    color: #000;
+    border-radius: 4px;
+    font-weight: 600;
+}
+
+.btn:hover {
+    background: var(--color-gold-light);
+    color: #000;
+}
